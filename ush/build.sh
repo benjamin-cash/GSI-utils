@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -eux
 
 # Get the root of the cloned GSI directory
 readonly DIR_ROOT=$(cd "$(dirname "$(readlink -f -n "${BASH_SOURCE[0]}" )" )/.." && pwd -P)
