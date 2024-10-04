@@ -61,7 +61,10 @@ if [[ "${MACHINE_ID}" != "UNKNOWN" ]]; then
 fi
 
 # Try searching based on paths since hostname may not match on compute nodes
-if [[ -d /lfs/h3 ]]; then
+if [[ -d /opt/container-scripts ]]; then
+  # We are in the container
+  MACHINE_ID=container
+elif [[ -d /lfs/h3 ]]; then
   # We are on NOAA Cactus or Dogwood
   MACHINE_ID=wcoss2
 elif [[ -d /lfs/h1 && ! -d /lfs/h3 ]]; then
